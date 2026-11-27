@@ -1,0 +1,5 @@
+$('form-slot').innerHTML='<form id="student-form"><label>Nombre<input name="name" required maxlength="100"></label><label>Matricula<input name="enrollment" required maxlength="40"></label><label>Correo<input name="email" type="email" required></label><label>Estado<select name="status"><option>Activo</option><option>Inactivo</option></select></label><button>Guardar</button><button type="button" id="cancel" class="secondary" hidden>Cancelar</button></form>';
+const form=$('student-form');let editing=null;
+function resetForm(){editing=null;form.reset();$('cancel').hidden=true;form.querySelector('button').textContent='Guardar';}
+$('cancel').onclick=resetForm;
+form.onsubmit=async e=>{e.preventDefault();try{await api('/api/students'+(editing?'/'+editing:''),{method:editing?'PUT':'POST',body:JSON.stringify(Object.fromEntries(new FormData(form)))});resetForm();notify('Registro guardado');if(typeof load==='function')await load();}catch(e){notify(e.message,true);}};
