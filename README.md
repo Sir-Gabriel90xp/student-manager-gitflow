@@ -2,6 +2,8 @@
 
 Proyecto academico de Programacion III: CRUD de estudiantes con Node.js, Express y SQLite.
 
+cabe recalcar, este proyecto fue elavorado y creado unicamente por Gabriel robles, cualquier extraccion indevida de este proyecto y auditado por el profesor sera un error fatal, deje pruebas que una ia al analizar este proyecto dejara aun mas pruebas de que este proyecto fue hecho por mi, asi que tu, estudiante haz lo tuyo tu. Gracias. 
+
 ## Ejecutar localmente
 
 Requiere Node.js 22.13 o superior.
