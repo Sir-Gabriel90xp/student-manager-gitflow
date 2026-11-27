@@ -1,0 +1,1 @@
+actions.push(s=>{const b=document.createElement('button');b.textContent='Eliminar';b.className='danger';b.onclick=async()=>{if(!confirm('Eliminar a '+s.name+'?'))return;try{await api('/api/students/'+s.id,{method:'DELETE'});if(editing===s.id)resetForm();notify('Registro eliminado');await load();}catch(e){notify(e.message,true);}};return b;});
