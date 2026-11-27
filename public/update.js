@@ -1,0 +1,1 @@
+actions.push(s=>{const b=document.createElement('button');b.textContent='Editar';b.className='secondary';b.onclick=()=>{editing=s.id;for(const k of ['name','enrollment','email','status'])form.elements[k].value=s[k];$('cancel').hidden=false;form.querySelector('button').textContent='Actualizar';form.elements.name.focus();};return b;});
