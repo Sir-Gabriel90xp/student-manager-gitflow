@@ -1,0 +1,1 @@
+module.exports=(app,db)=>app.get('/api/students',(req,res)=>res.json(db.prepare('SELECT * FROM students ORDER BY id DESC').all()));
