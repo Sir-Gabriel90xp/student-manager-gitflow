@@ -1,0 +1,1 @@
+module.exports=(app,db)=>app.delete('/api/students/:id',(req,res)=>{const result=db.prepare('DELETE FROM students WHERE id=?').run(req.params.id);if(!result.changes)return res.status(404).json({error:'Registro no encontrado'});res.json({ok:true});});
